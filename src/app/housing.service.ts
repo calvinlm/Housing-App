@@ -19,6 +19,6 @@ export class HousingService {
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
-    console.log(firstName, lastName, email);
+    console.log(`Homes application received: firstName: ${firstName}, lastName: ${lastName}, email: ${email}.`);
   }
 }

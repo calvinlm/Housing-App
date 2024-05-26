@@ -29,3 +29,7 @@
     content: "\203A";
     margin-left: 5px;
   }
+
+  mat-card{
+    border-radius: 30px;
+  }

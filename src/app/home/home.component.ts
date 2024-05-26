@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HousingLocationComponent } from '../housinglocation/housinglocation.component';
 import { HousingLocation } from '../housinglocation';
 import { HousingService } from '../housing.service';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CommonModule,
-    HousingLocationComponent
+    HousingLocationComponent,
+    MatCardModule
   ],
   template: `
     <section>
@@ -18,12 +20,14 @@ import { HousingService } from '../housing.service';
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>
+    <mat-card>
     <section class="results">
       <app-housinglocation
         *ngFor="let housingLocation of filteredLocationList"
         [housingLocation]="housingLocation">
       </app-housinglocation>
     </section>
+    </mat-card>
   `,
   styleUrls: ['./home.component.css'],
 })
